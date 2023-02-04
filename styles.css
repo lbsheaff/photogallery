@@ -66,8 +66,6 @@ h2 {
     font-size: 2em;
     text-align: center;
     text-transform: uppercase;
-}
-main h2 {
     font-weight: bold;
     padding: 25px;
 }
@@ -78,13 +76,15 @@ p {
     padding-right: 10px;
     padding-bottom: 15px;
 }
+figcaption, label, input, small {
+    font-size: 1em;
+}
 header {
     background-color: #ffffff;
     text-align: center;
 }
 nav li {
     display: inline;
-    
 }
 nav ul {
     text-align: center;
@@ -100,33 +100,46 @@ nav a {
     margin: 10px;
 }
 [href="#top"] {
+    background-color: #000000;
     position:fixed;
     bottom:0px;
     right:0px;
+    padding: 10px;
+    border: 0;
+    border-radius: 1em;
+    z-index: 1;
 }
 main {
     background-color: #ffffff;
 }
-figcaption, label, input, small {
-    font-size: 1em;
-}
-section figure {
+figure {
     display: grid;
     justify-content: center;
     margin-bottom: 25px;
     position: relative;
 }
-figure img {
+img {
     display: block;
 }
 figcaption { 
     display: grid;
     position: absolute;
-    text-transform: uppercase;  
+    text-transform: uppercase; 
     top: 10px;
     left: 0;
     right: 0;
     justify-content: center;
+}
+.bottom{
+    padding-top: 245px;
+    color: #ffffff;
+}
+.bottomblack{
+    padding-top: 595px;
+    color:#000000
+}
+.white{
+    color: #ffffff;    
 }
 #contact {
     background-color: #000000;
@@ -136,21 +149,108 @@ figcaption {
 #contact h3 {
     visibility: hidden;
 }
+label, input {
+    display: grid;
+    grid-template-rows: repeat(3,6px);
+}
+input {
+    margin: auto;
+    display: block;
+    margin-bottom: 20px;
+    width: 400px;
+    height: 50px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #007d7b;
+    padding-left: 10px;
+}
+label {
+    text-transform: uppercase;
+    text-align: left;
+    margin-left: 55px;
+}
+input::placeholder {
+    color: #007d7b;
+}
+button {
+    background-color: #007d7b;
+    border: 0;
+    border-radius: 1em;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 225px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 5px;
+}
 footer {
     color: #ffffff;
     text-align: center;
+    text-transform: uppercase;
+    margin-top: 50px
 }
 @media screen and (min-width: 880px) {
-    body{
-        max-width: 880px;
+body{
+    max-width: 880px;
+}
+header {
+    text-align: left;
+    padding-left: 10px;
+}
+input {
+    width: 720px;
+}
+#gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+   }
+#gallery h2 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+#gallery h2 ~ p {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+label {
+    margin-left: 90px;
+}
+button {
+    width: 400px;
 }
 }
 @media screen and (min-width: 1300px) {
-    body{
-        max-width: 1300px;
+body{
+    max-width: 1300px;
 }
-    nav ul {
+header {
+    text-align: left;
+    padding-left: 10px;
+}
+nav ul {
     text-align: right;
     padding-right: 10px;
+}
+#gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+} 
+#gallery h2 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+#gallery h2 ~ p {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+input {
+    width: 1000px;
+}
+label {
+    margin-left: 163px;
+}
+button {
+    width: 575px;
 }
 }
